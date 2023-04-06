@@ -1,6 +1,7 @@
 const express = require('express');
 const routeLogin = require('./routes/routeLogin');
 const routeUser = require('./routes/routeUser');
+const routeCategory = require('./routes/routeCategory');
 
 // ...
 
@@ -11,11 +12,10 @@ app.get('/', (_request, response) => {
   response.send();
 });
 
-//passou o 6 e 7 também
-
 app.use(express.json());
 app.use('/login', routeLogin);
 app.use('/user', routeUser);
+app.use('/categories', routeCategory);
 
 // ...
 
